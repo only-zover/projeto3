@@ -1,0 +1,16 @@
+<h1>Lista de usuários:</h1>
+
+{{#each users}}
+<div>
+    <h2>Usuário: {{username}}</h2>
+    <h3>Email: {{email}}</h3>
+    <a href="/userlist/edit:{{_id}}"><button type="button">Editar usuário</button></a>
+    <form action="userlist/delete" method="post">
+        <input type="hidden" name="id" value="{{_id}}">
+        <input type="submit" value="Deletar">
+    </form>
+    <hr>
+</div>
+{{else}}
+<h2>Nenhum usuário registrado</h2>
+{{/each}}

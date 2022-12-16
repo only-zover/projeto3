@@ -1,0 +1,78 @@
+<head>
+    <link rel="stylesheet" href="/index.css" />
+</head>
+<header>
+    <div class="nav-container">
+        <nav class="navbar">
+            <div class="div-container">
+                <div class="logo">
+                    <a href="#">
+                        <img src="/logo.svg" height="35px" alt="Logo Bitbucket" />
+                    </a>
+                </div>
+                <ul class="nav-list">
+                    <li>
+                        <a href="#">Why Bitbucket</a>
+                    </li>
+                    <li>
+                        <a href="#">Product Guide</a>
+                    </li>
+                    <li>
+                        <a href="#">Self-Hosted</a>
+                    </li>
+                    <li>
+                        <a href="#">Pricing</a>
+                    </li>
+                    <li>
+                        <a id="loginbt" href="#">Log in</a>
+                        <a id="logoutbt" href="#">Log out</a>
+                    </li>
+                </ul>
+                <div class="getit">
+                    <a href="/cad">Register</a>
+                </div>
+            </div>
+        </nav>
+    </div>
+</header>
+<main>
+    <div class="container">
+        <div class="bt">
+            <a id="apibt" href="#">Consumir API</a>
+            <p id="msgerr"></p>
+        </div>
+        <div class="txt1">
+            <h1>Code & CI/CD, optimized for teams using Jira</h1>
+        </div>
+        <div class="txt2">
+            <p>
+                With best-in-class Jira integration, and built-in CI/CD, Bitbucket
+                Cloud is the native Git tool in Atlassian’s Open DevOps solution.
+                Join millions of developers who choose to build on Bitbucket.
+            </p>
+        </div>
+        <div class="bt">
+            <a href="#">Get it free</a>
+        </div>
+        <div class="img">
+            <img src="/banner.png" alt="Banner Bitbucket" />
+        </div>
+    </div>
+    <dialog id="modal">
+        <label id="labelEmail" for="email">Email:</label>
+        <input type="text" name="email" id="email" placeholder="Email" required />
+        <label id="labelPassword" for="password">Senha:</label>
+        <input type="password" name="password" id="password" placeholder="Senha" required />
+        <button id="doLoginBt" type="submit">Entrar</button>
+        <button id="exit" type="button">Sair</button>
+        <div id="msg"></div>
+    </dialog>
+    <dialog id="search">
+        <input type="text" name="searchbt" id="campo" placeholder="Nome do Pokémon" />
+        <button id="searchbt" type="submit">Buscar</button>
+        <button id="closeapi" type="button">Sair</button>
+        <div>
+            <img id="pokemon" src="" alt="" />
+        </div>
+    </dialog>
+</main>

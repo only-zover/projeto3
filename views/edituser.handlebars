@@ -1,0 +1,21 @@
+<h1>Editar usuário</h1>
+{{#each errors}}
+<div>
+    <p>{{text}}</p>
+</div>
+{{else}}
+
+{{/each}}
+<form action="/userlist/edit" method="post">
+    <input type="hidden" name="id" value="{{users._id}}">
+    <label for="username">Nome:</label>
+    <input type="text" id="username" name="username" value="{{users.username}}" required>
+
+    <label for="email">Email:</label>
+    <input type="text" id="email" name="email" value="{{users.email}}" required>
+
+    <label for="password">Senha:</label>
+    <input type="password" id="password" name="password" required>
+
+    <input type="submit" value="Editar">
+</form>
