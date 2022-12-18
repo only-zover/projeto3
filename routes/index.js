@@ -5,12 +5,15 @@ const mongoose = require("mongoose");
 require("../models/User");
 const User = mongoose.model("user");
 
+require("../models/Post");
+const Post = mongoose.model("post");
+
 function isThisOk(param) {
   if (
     !param ||
     typeof param == undefined ||
     param == null ||
-    param.length <= 2
+    param.length < 3
   ) {
     return false;
   } else {
@@ -28,7 +31,7 @@ router.get("/userlist", (req, res) => {
   User.find()
     .then((users) => {
       res.render("userlist", {
-        title: "userlist",
+        title: "Lista de Usuários",
         users: users.map((users) => users.toJSON()),
       });
     })
@@ -122,6 +125,93 @@ router.post("/cad", (req, res) => {
 
     res.render("cad", { title: "Cadastro", errors: errors });
   }
+});
+
+router.get("/posts", (req, res) => {
+  Post.find()
+    .lean()
+    .populate({ path: "posts", strictPopulate: false })
+    .sort({ date: "desc" })
+    .then((posts) => {
+      res.render("posts", { title: "Postagens", posts: posts });
+    })
+    .catch((err) => {
+      req.flash("error_msg", "Houve um erro ao listar as postagens: " + err);
+      res.redirect("/");
+    });
+});
+
+router.get("/posts/add", (req, res) => {
+  User.find()
+    .then((users) => {
+      res.render("postadd", { title: "Nova postagem", users: users });
+    })
+    .catch((err) => {
+      req.flash("error_msg", "Houve um erro ao carregar...");
+      res.redirect("/posts");
+    });
+});
+
+router.post("/posts/new", (req, res) => {
+  const newPost = {
+    title: req.body.title,
+    content: req.body.content,
+    description: req.body.description,
+  };
+
+  new Post(newPost)
+    .save()
+    .then(() => {
+      req.flash("success_msg", "Postagem criada com sucesso");
+      res.redirect("/posts");
+    })
+    .catch((err) => {
+      req.flash("error_msg", "Houve um erro: " + err);
+      res.redirect("/posts");
+    });
+});
+
+router.get("/posts/edit/:id", (req, res) => {
+  Post.findOne({ _id: req.params.id })
+    .lean()
+    .then((post) => {
+      res.render("editpost", { title: "Editar postagem", post: post });
+    })
+    .catch((err) => {
+      req.flash("error_msg", "Houve um erro ao carregar... " + err);
+      res.redirect("/posts");
+    });
+});
+
+router.post("/posts/edit", (req, res) => {
+  Post.findOneAndUpdate(
+    { _id: req.body.id },
+    {
+      title: req.body.title,
+      content: req.body.content,
+      description: req.body.description,
+    }
+  )
+    .then(() => {
+      req.flash("success_msg", "Postagem editada com sucesso.");
+      res.redirect("/posts");
+    })
+    .catch((err) => {
+      req.flash("error_msg", "Erro ao editar a postagem: " + err);
+      res.redirect("/posts");
+    });
+});
+
+router.post("/posts/delete", (req, res) => {
+  Post.deleteOne({ _id: req.body.id })
+    .then(() => {
+      req.flash("success_msg", "Postagem deletada com suceso.");
+      res.redirect("/posts");
+    })
+    .catch((err) => {
+      req.flash("error_msg", "Houve um erro ao deletar a postagem.");
+      res.redirect("/posts");
+    });
 });
 
 module.exports = router;

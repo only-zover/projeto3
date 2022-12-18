@@ -7,16 +7,4 @@ router.get("/", function (req, res) {
   });
 });
 
-router.get("/outro", function (req, res) {
-  res.render("outro", {
-    title: "outro",
-  });
-});
-
-router.get("/teste", function (req, res) {
-  res.render("teste", {
-    title: "teste",
-  });
-});
-
 module.exports = router;
