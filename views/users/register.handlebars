@@ -1,0 +1,22 @@
+<h1>Registrar</h1>
+{{#each errors}}
+<div>
+    <p>{{text}}</p>
+</div>
+{{else}}
+{{/each}}
+<form action="" method="post">
+    <label for="username">Nome:</label>
+    <input type="text" id="username" name="username" required>
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required>
+
+    <label for="password">Senha:</label>
+    <input type="password" id="password" name="password" required>
+
+    <label for="confirmpassword">Confirme a senha:</label>
+    <input type="password" id="confirmpassword" name="confirmpassword" required>
+
+    <button type="submit">Criar conta</button>
+</form>

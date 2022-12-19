@@ -4,15 +4,20 @@ const path = require("path");
 const hbs = require("express-handlebars");
 const flash = require("connect-flash");
 const mongoose = require("mongoose");
+const db = require("./config/db");
 
 const index = require("./routes/index");
 const admin = require("./routes/admin");
+const user = require("./routes/user");
 const session = require("express-session");
+const passport = require("passport");
+
+require("./config/auth")(passport);
 
 const app = express();
 
 mongoose
-  .connect("mongodb://localhost:27017/mongo")
+  .connect(db.mongoURI)
   .then(() => {
     console.log("Mongo on");
   })
@@ -27,11 +32,16 @@ app.use(
     saveUninitialized: true,
   })
 );
+
+app.use(passport.initialize());
+app.use(passport.session());
 app.use(flash());
 //
 app.use((req, res, next) => {
   res.locals.success_msg = req.flash("success_msg");
   res.locals.error_msg = req.flash("error_msg");
+  res.locals.error = req.flash("error");
+  res.locals.user = req.user || null;
   next();
 });
 //
@@ -46,7 +56,7 @@ app.use(express.json());
 
 app.use("/", index);
 app.use("/admin", admin);
+app.use("/user", user);
 
-http.createServer(app).listen(8000, () => {
-  console.log("Rodando...");
-});
+const PORT = process.env.PORT || 8000;
+http.createServer(app).listen(PORT);

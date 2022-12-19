@@ -1,13 +1,13 @@
 <div>
-    <form action="/posts/edit" method="POST">
+    <form action="/admin/posts/edit" method="POST">
         <input type="hidden" value="{{post._id}}" name="id">
         <h2>Editar postagem</h2>
         <label for="title">Título:</label>
-        <input type="text" name="title" value="{{post.title}}">
+        <input type="text" name="title" value="{{post.title}}" required>
         <label for="content">Texto:</label>
-        <input type="text" name="content" value="{{post.content}}">
+        <input type="text" name="content" value="{{post.content}}" required>
         <label for="description">Descrição:</label>
-        <input type="text" name="description" value="{{post.description}}">
+        <input type="text" name="description" value="{{post.description}}" required>
         <button type="submit">Editar postagem</button>
     </form>
 </div>

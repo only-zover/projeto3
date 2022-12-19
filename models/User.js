@@ -13,6 +13,10 @@ const User = new mongoose.Schema({
     type: String,
     required: true,
   },
+  isAdm: {
+    type: Number,
+    default: 0,
+  },
 });
 
 mongoose.model("user", User);

@@ -1,12 +1,12 @@
 <div>
-    <form action="/posts/new" method="POST">
+    <form action="new" method="POST">
         <h2>Nova postagem</h2>
         <label for="title">Título:</label>
-        <input type="text" name="title">
+        <input type="text" name="title" required>
         <label for="content">Texto:</label>
-        <input type="text" name="content">
+        <input type="text" name="content" required>
         <label for="description">Descrição:</label>
-        <input type="text" name="description">
+        <input type="text" name="description" required>
         <button type="submit">Criar postagem</button>
     </form>
 </div>

@@ -75,10 +75,6 @@ header {
     color: #0065ff;
 }
 
-#logoutbt {
-    display: none;
-}
-
 .getit {
     padding: 26px 0 15px;
     margin-left: 10px;

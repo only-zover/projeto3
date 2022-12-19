@@ -24,12 +24,15 @@
                         <a href="#">Pricing</a>
                     </li>
                     <li>
-                        <a id="loginbt" href="#">Log in</a>
-                        <a id="logoutbt" href="#">Log out</a>
+                        {{#if user}}
+                        <a id="logoutbt" href="user/logout">Log out</a>
+                        {{else}}
+                        <a id="loginbt" href="user/login">Log in</a>
+                        {{/if}}
                     </li>
                 </ul>
                 <div class="getit">
-                    <a href="/cad">Register</a>
+                    <a href="user/register">Register</a>
                 </div>
             </div>
         </nav>
@@ -37,10 +40,6 @@
 </header>
 <main>
     <div class="container">
-        <div class="bt">
-            <a id="apibt" href="#">Consumir API</a>
-            <p id="msgerr"></p>
-        </div>
         <div class="txt1">
             <h1>Code & CI/CD, optimized for teams using Jira</h1>
         </div>

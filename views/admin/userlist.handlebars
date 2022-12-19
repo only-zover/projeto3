@@ -4,7 +4,7 @@
 <div>
     <h2>Usuário: {{username}}</h2>
     <h3>Email: {{email}}</h3>
-    <a href="/userlist/edit:{{_id}}"><button type="button">Editar usuário</button></a>
+    <a href="userlist/edit:{{_id}}"><button type="button">Editar usuário</button></a>
     <form action="userlist/delete" method="post">
         <input type="hidden" name="id" value="{{_id}}">
         <input type="submit" value="Deletar">

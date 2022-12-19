@@ -6,7 +6,7 @@
 {{else}}
 
 {{/each}}
-<form action="/userlist/edit" method="post">
+<form action="/admin/userlist/edit" method="post">
     <input type="hidden" name="id" value="{{users._id}}">
     <label for="username">Nome:</label>
     <input type="text" id="username" name="username" value="{{users.username}}" required>
