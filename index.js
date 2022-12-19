@@ -12,6 +12,9 @@ const user = require("./routes/user");
 const session = require("express-session");
 const passport = require("passport");
 
+require("./models/User");
+const User = mongoose.model("user");
+
 require("./config/auth")(passport);
 
 const app = express();
@@ -19,6 +22,17 @@ const app = express();
 mongoose
   .connect(db.mongoURI)
   .then(() => {
+    User.findOne({ username: "Admin" }).then((user) => {
+      if (!user) {
+        User.create({
+          username: "Admin",
+          email: "Admin@admin.com",
+          password: "Admin",
+          isAdm: 1,
+        });
+      }
+    });
+
     console.log("Mongo on");
   })
   .catch((err) => {

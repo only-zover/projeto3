@@ -1,3 +1,7 @@
+const mongoose = require("mongoose");
+require("../models/User");
+const User = mongoose.model("user");
+
 if (process.env.NODE_ENV == "production") {
   module.exports = {
     mongoURI:

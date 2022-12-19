@@ -111,7 +111,7 @@ router.get("/userlist", isAdm, (req, res) => {
       });
     })
     .catch((err) => {
-      req.flash("error_msg", "Houve um erro ao listar as categorias.");
+      req.flash("error_msg", "Houve um erro ao listar os usuários.");
       res.redirect("index");
     });
 });
