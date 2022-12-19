@@ -4,15 +4,15 @@ const path = require("path");
 const hbs = require("express-handlebars");
 const flash = require("connect-flash");
 const mongoose = require("mongoose");
-const db = require("../config/db");
+const db = require("./config/db");
 
-const index = require("../routes/index");
-const admin = require("../routes/admin");
-const user = require("../routes/user");
+const index = require("./routes/index");
+const admin = require("./routes/admin");
+const user = require("./routes/user");
 const session = require("express-session");
 const passport = require("passport");
 
-require("../config/auth")(passport);
+require("./config/auth")(passport);
 
 const app = express();
 
