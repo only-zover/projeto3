@@ -1,8 +1,8 @@
 # Link ~ https://projeto3amor.vercel.app/
 
-## Administrador:
+## Administrador<br>Email: Admin@admin.com<br>Senha: Admin
 
-### Email: Admin@admin.com<br>Senha: Admin
+### O deploy não está funcionando direito
 
 # PROJETO 3 - Express.js
 
