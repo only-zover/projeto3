@@ -80,7 +80,7 @@ router.post("/register", (req, res) => {
       }
     });
     /**/
-    errors.push({ text: "user cadstrado" });
+    errors.push({ text: errors });
 
     res.render("users/register", { title: "Cadastro", errors: errors });
   }
