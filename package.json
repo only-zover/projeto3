@@ -1,11 +1,12 @@
 {
-  "name": "nova-pasta",
+  "name": "projeto3",
   "version": "1.0.0",
   "description": "Nessa terceira etapa, devem ser desenvolvidas as seguinte funcionalidades no lado servidor de uma aplicação web, tendo como base a interface desenvolvida no PROJETO 2:",
-  "main": "app.js",
+  "main": "api/app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon app.js"
+    "dev": "nodemon api/app.js",
+    "start": "node ."
   },
   "author": "",
   "license": "ISC",

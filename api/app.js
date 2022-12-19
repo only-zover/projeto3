@@ -1,18 +1,21 @@
+import { Router } from "express";
+
 const express = require("express");
 const http = require("http");
 const path = require("path");
 const hbs = require("express-handlebars");
 const flash = require("connect-flash");
 const mongoose = require("mongoose");
-const db = require("./config/db");
+const db = require("../config/db");
+const route = Router();
 
-const index = require("./routes/index");
-const admin = require("./routes/admin");
-const user = require("./routes/user");
+const index = require("../routes/index");
+const admin = require("../routes/admin");
+const user = require("../routes/user");
 const session = require("express-session");
 const passport = require("passport");
 
-require("./config/auth")(passport);
+require("../config/auth")(passport);
 
 const app = express();
 
@@ -57,6 +60,15 @@ app.use(express.json());
 app.use("/", index);
 app.use("/admin", admin);
 app.use("/user", user);
+
+route.get("/", (req, res) => {
+  return res.json({
+    success: true,
+    message: "Sucesso",
+  });
+});
+
+app.use(route);
 
 const PORT = process.env.PORT || 8000;
 http.createServer(app).listen(PORT);
