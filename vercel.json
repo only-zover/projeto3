@@ -2,14 +2,16 @@
   "name": "projeto3",
   "version": 2,
   "public": true,
-  "build": {
-    "src": "api/app.js",
-    "use": "@vercel/node"
-  },
+  "build": [
+    {
+      "src": "api/app.js",
+      "use": "@vercel/node"
+    }
+  ],
   "routes": [
     {
-      "src": "./routes",
-      "dest": "api/app.js"
+      "src": "/(.*)",
+      "dest": "/"
     }
   ]
 }
