@@ -1,10 +1,9 @@
 {
-  "name": "projeto3",
   "version": 2,
   "public": true,
-  "build": [
+  "builds": [
     {
-      "src": "api/app.js",
+      "src": "./api/app.js",
       "use": "@vercel/node"
     }
   ],
