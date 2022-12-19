@@ -80,8 +80,7 @@ router.post("/register", (req, res) => {
       }
     });
     /**/
-    errors.push({ text: errors });
-
+    console.log("passou");
     res.render("users/register", { title: "Cadastro", errors: errors });
   }
 });

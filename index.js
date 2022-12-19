@@ -59,4 +59,6 @@ app.use("/admin", admin);
 app.use("/user", user);
 
 const PORT = process.env.PORT || 8000;
-http.createServer(app).listen(PORT);
+http.createServer(app).listen(PORT, () => {
+  console.log("rodando");
+});

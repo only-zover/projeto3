@@ -1,11 +1,13 @@
+# Link ~ https://projeto3amor.vercel.app/
+
 # PROJETO 3 - Express.js
 
 Nessa terceira etapa, devem ser desenvolvidas as seguinte funcionalidades no lado servidor de uma aplicação web, tendo como base a interface desenvolvida no PROJETO 2:
 
->**Login:** realização do login da aplicação utilizando o conceito de Sessões utilizando Cookies.<br><br>
-**Cadastramento de usuários:** página web que contém um formulário para cadastro do usuário. O formulário deve apresentar validação de existência dos campos, verificação de unicidade do login e email.<br><br>
-**Publicação de conteúdos para o administrador:** o usuário deve ser capaz de publicar conteúdos textuais, imagens ou vídeos no seu próprio perfil. Podem ser utilizados recursos de HTML5, juntamente com tecnologias de upload de imagens ou vídeos para o servidor para implementar essa funcionalidade. O envio de arquivos deve ser realizado utilizando a funcionalidade de upload de arquivos em uma aplicação web.<br><br>
-**Busca de conteúdo:** cada usuário deve ser capaz de realizar buscas nos conteúdos publicados. Para as funcionalidades de Login e cadastro de usuarios, será permitida a reutilização de códigos apresentados em aula ou disponíveis em outros repositorios.
+> **Login:** realização do login da aplicação utilizando o conceito de Sessões utilizando Cookies.<br><br>
+> **Cadastramento de usuários:** página web que contém um formulário para cadastro do usuário. O formulário deve apresentar validação de existência dos campos, verificação de unicidade do login e email.<br><br>
+> **Publicação de conteúdos para o administrador:** o usuário deve ser capaz de publicar conteúdos textuais, imagens ou vídeos no seu próprio perfil. Podem ser utilizados recursos de HTML5, juntamente com tecnologias de upload de imagens ou vídeos para o servidor para implementar essa funcionalidade. O envio de arquivos deve ser realizado utilizando a funcionalidade de upload de arquivos em uma aplicação web.<br><br>
+> **Busca de conteúdo:** cada usuário deve ser capaz de realizar buscas nos conteúdos publicados. Para as funcionalidades de Login e cadastro de usuarios, será permitida a reutilização de códigos apresentados em aula ou disponíveis em outros repositorios.
 
 ## Critérios de avaliação
 
